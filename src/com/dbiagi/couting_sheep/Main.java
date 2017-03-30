@@ -3,6 +3,7 @@ package com.dbiagi.couting_sheep;
 import java.io.*;
 import java.util.HashSet;
 import java.util.StringTokenizer;
+import com.dbiagi.InputReader;
 
 /**
  * Counting sheep problem.
@@ -11,7 +12,7 @@ import java.util.StringTokenizer;
  */
 public class Main {
 
-    private static String OUT_FILE_NAME = "saida";
+    private static String OUT_FILE_NAME = "couning_sheeps.out";
 
     public static void main(String[] args) throws IOException {
         File file = null;
@@ -75,29 +76,4 @@ public class Main {
         return current.toString();
     }
 
-    private static class InputReader {
-        private BufferedReader reader;
-        private StringTokenizer tokenizer;
-
-        InputReader(InputStream stream) throws FileNotFoundException {
-            reader = new BufferedReader(new InputStreamReader(stream));
-            tokenizer = null;
-        }
-
-        private String next() {
-            while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-                try {
-                    tokenizer = new StringTokenizer(reader.readLine());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
-            return tokenizer.nextToken();
-        }
-
-        public int nextInt() {
-            return Integer.parseInt(next());
-        }
-    }
 }
